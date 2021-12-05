@@ -31,7 +31,7 @@ app.post("/prov", (req, res) => {
   students.push(stud);
   studs = JSON.stringify(students);
   fs.writeFileSync(files, studs);
-  res.json({ message: "Students array changed(create)" });
+  res.json({ message: "Students create" });
   console.log(`createdAt : ${date.toISOString()}`);
 });
 
@@ -49,7 +49,7 @@ app.delete("/students/:id", (req, res) => {
   students = students.filter((student) => student.id !== req.params.id);
   studs = JSON.stringify(students);
   fs.writeFileSync(files, studs);
-  res.json({ message: "Students array changed(delete)" });
+  res.json({ message: "Students delete" });
 });
 
 app.put("/students/:id", (req, res) => {
@@ -62,7 +62,7 @@ app.put("/students/:id", (req, res) => {
   student.updatedAt = date1.toISOString();
   studs = JSON.stringify(students);
   fs.writeFileSync(files, studs);
-  res.json({ message: "Students array changed(update)" });
+  res.json({ message: "Students update" });
   console.log(`updatedAt : ${date1.toISOString()}`);
 });
 
