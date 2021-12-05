@@ -59,11 +59,11 @@ app.put("/students/:id", (req, res) => {
   student.firstName = req.body.firstName;
   student.lastName = req.body.lastName;
   student.group = req.body.group;
-  student.updatedAt = date1.toISOString();
+  student.updatedAt = date1.toLocaleString();
   studs = JSON.stringify(students);
   fs.writeFileSync(files, studs);
   res.json({ message: "Students update" });
-  console.log(`updatedAt : ${date1.toISOString()}`);
+  console.log(`updatedAt : ${date1.toLocaleString()}`);
 });
 
 app.listen(8080); //the server object listens on port 8080
