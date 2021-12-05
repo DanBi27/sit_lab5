@@ -39,8 +39,8 @@ app.get("/students/:id", (req, res) => {
   const { id } = req.params;
   const studs = fs.readFileSync(files, "utf8");
   const students = JSON.parse(studs);
-  const foundStudent = students.find((student) => student.id === id);
-  res.send(foundStudent);
+  const foundSt = students.find((student) => student.id === id);
+  res.send(foundSt);
 });
 
 app.delete("/students/:id", (req, res) => {
